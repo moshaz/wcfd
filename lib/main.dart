@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wcfd/Views/app_nav.dart';
 import 'package:wcfd/Views/home_page.dart';
+import 'package:get/get.dart';
+
+import 'Routes/app_pages.dart';
+import 'Routes/app_routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'What Can Flutter Do?',
       theme: ThemeData(
@@ -28,7 +33,9 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      initialRoute: AppRoutes.APPNAV,
+      getPages: AppPages.list,
+      //home: AppNav(),
     );
   }
 }
